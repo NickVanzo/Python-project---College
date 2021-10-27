@@ -26,4 +26,21 @@ def find_pattern(matrix_main, matrix_input):
 
 matrix_input = extract_matrix_from_file("./input")
 matrix_main = extract_matrix_from_file("./matrix")
+
+matrix_main_90 = list(map(list, zip(*matrix_main)))[::-1]
+matrix_main_180 = list(map(list, zip(*matrix_main_90)))[::-1]
+matrix_main_270 = list(map(list, zip(*matrix_main_180)))[::-1]
+
+matrix_input_90 = list(map(list, zip(*matrix_input)))[::-1]
+matrix_input_180 = list(map(list, zip(*matrix_input_90)))[::-1]
+matrix_input_270 = list(map(list, zip(*matrix_input_180)))[::-1]
+
+print("If not rotate: ")
 find_pattern(matrix_main, matrix_input)
+print("If rotated of 90 degress:")
+find_pattern(matrix_main_90, matrix_input_90)
+print("If rotated of 180 degress:")
+find_pattern(matrix_main_180, matrix_input_180)
+print("If rotated of 270 degress: ")
+find_pattern(matrix_main_270, matrix_input_270)
+
